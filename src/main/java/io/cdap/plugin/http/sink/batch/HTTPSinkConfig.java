@@ -273,7 +273,9 @@ public class HTTPSinkConfig extends ReferencePluginConfig {
 
   public void validate(FailureCollector collector) {
     try {
-      new URL(url);
+      if (!containsMacro(URL)) {
+        new URL(url);
+      }
     } catch (MalformedURLException e) {
       collector.addFailure(String.format("URL '%s' is malformed: %s", url, e.getMessage()), null)
         .withConfigProperty(URL);
@@ -285,7 +287,9 @@ public class HTTPSinkConfig extends ReferencePluginConfig {
     }
 
     try {
-      convertHeadersToMap(requestHeaders);
+      if (!containsMacro(REQUEST_HEADERS)) {
+        convertHeadersToMap(requestHeaders);
+      }
     } catch (IllegalArgumentException e) {
       collector.addFailure(e.getMessage(), null)
         .withConfigProperty(REQUEST_HEADERS);
