@@ -20,8 +20,8 @@
   <modelVersion>4.0.0</modelVersion>
   <name>HTTP Plugins</name>
   <groupId>io.cdap</groupId>
-  <artifactId>http-plugins</artifactId>
-  <version>1.4.0-SNAPSHOT</version>
+  <artifactId>http-plugins-lr</artifactId>
+  <version>1.0.0</version>
 
   <licenses>
     <license>
@@ -562,14 +562,29 @@
         </dependencies>
       </plugin>
       <plugin>
-        <groupId>io.cdap</groupId>
+        <groupId>com.liveramp.cdap.plugin</groupId>
+        <version>1.1.4</version>
         <artifactId>cdap-maven-plugin</artifactId>
-        <version>1.1.0</version>
         <configuration>
           <cdapArtifacts>
             <parent>system:cdap-data-pipeline[6.1.0-SNAPSHOT,7.0.0-SNAPSHOT)</parent>
-            <parent>system:cdap-data-streams[6.1-SNAPSHOT.0,7.0.0-SNAPSHOT)</parent>
+            <parent>system:cdap-data-streams[6.1.0-SNAPSHOT,7.0.0-SNAPSHOT)</parent>
           </cdapArtifacts>
+          <categories>
+            <param>Http Plugins</param>
+            <param>LSH</param>
+          </categories>
+          <additionalActionArguments>
+            <argument>
+              <key>jar</key>
+              <value>${project.artifactId}-${project.version}.jar</value>
+            </argument>
+          </additionalActionArguments>
+          <scope>user</scope>
+          <author>LiveRamp</author>
+          <org>LiveRamp</org>
+          <!-- Using directory maven plugin        -->
+          <relativeOutputDir>./packages</relativeOutputDir>
         </configuration>
         <executions>
           <execution>
@@ -577,7 +592,15 @@
             <phase>prepare-package</phase>
             <goals>
               <goal>create-plugin-json</goal>
+              <goal>create-plugin-spec-json</goal>
             </goals>
+          </execution>
+          <execution>
+            <goals>
+              <goal>package-artifacts-for-hub</goal>
+            </goals>
+            <id>move-artifacts</id>
+            <phase>package</phase>
           </execution>
         </executions>
       </plugin>
