@@ -23,6 +23,12 @@
   <artifactId>http-plugins-lr</artifactId>
   <version>1.0.0</version>
 
+  <parent>
+    <groupId>com.liveramp.cdap</groupId>
+    <artifactId>liveramp_cdap</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -584,7 +590,7 @@
           <author>LiveRamp</author>
           <org>LiveRamp</org>
           <!-- Using directory maven plugin        -->
-          <relativeOutputDir>./packages</relativeOutputDir>
+          <relativeOutputDir>${cdap-plugins.basedir}/packages</relativeOutputDir>
         </configuration>
         <executions>
           <execution>
