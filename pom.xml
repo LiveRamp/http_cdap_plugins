@@ -78,6 +78,30 @@
       <id>sonatype-snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
+
+    <!-- Artifactory -->
+    <repository>
+      <id>library-snapshots</id>
+      <name>library-snapshots</name>
+      <url>https://library.liveramp.net/artifactory/list/all-snapshots/</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+    </repository>
+    <repository>
+      <id>library-releases</id>
+      <name>library-releases</name>
+      <url>https://library.liveramp.net/artifactory/list/libs-release/</url>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+    </repository>
   </repositories>
 
   <properties>
@@ -508,6 +532,7 @@
             </goals>
             <configuration>
               <excludes>
+                <exclude>.github/workflows/*</exclude>
                 <exclude>LICENSE*.txt</exclude>
                 <!-- This file should be not be there, but I am excluding it for now -->
                 <exclude>*.rst</exclude>
