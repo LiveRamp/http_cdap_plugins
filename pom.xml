@@ -59,17 +59,6 @@
     <url>https://issues.cask.co/browse/CDAP</url>
   </issueManagement>
 
-  <distributionManagement>
-    <repository>
-      <id>sonatype.release</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-    <site>
-      <id>cdap</id>
-      <url>http://cdap.io</url>
-    </site>
-  </distributionManagement>
-
   <repositories>
     <repository>
       <id>sonatype</id>
