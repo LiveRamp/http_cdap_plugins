@@ -26,7 +26,7 @@
   <parent>
     <groupId>com.liveramp.cdap</groupId>
     <artifactId>liveramp_cdap</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
