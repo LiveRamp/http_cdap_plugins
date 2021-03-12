@@ -27,6 +27,7 @@
     <groupId>com.liveramp.cdap</groupId>
     <artifactId>liveramp_cdap</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <licenses>
@@ -77,30 +78,6 @@
     <repository>
       <id>sonatype-snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </repository>
-
-    <!-- Artifactory -->
-    <repository>
-      <id>library-snapshots</id>
-      <name>library-snapshots</name>
-      <url>https://library.liveramp.net/artifactory/list/all-snapshots/</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </repository>
-    <repository>
-      <id>library-releases</id>
-      <name>library-releases</name>
-      <url>https://library.liveramp.net/artifactory/list/libs-release/</url>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
     </repository>
   </repositories>
 
