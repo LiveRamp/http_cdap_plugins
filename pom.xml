@@ -39,18 +39,25 @@
     </license>
   </licenses>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>library.liveramp.net</id>
-      <name>library.liveramp.net-snapshots</name>
-      <url>https://library.liveramp.net/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-    <repository>
-      <id>library.liveramp.net</id>
-      <name>library.liveramp.net-releases</name>
-      <url>https://library.liveramp.net/artifactory/libs-release-local</url>
-    </repository>
-  </distributionManagement>
+  <developers>
+    <developer>
+      <name>CDAP</name>
+      <email>cdap-dev@googlegroups.com</email>
+      <organization>CDAP</organization>
+      <organizationUrl>http://www.cdap.io</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:https://github.com/data-integrations/http.git</connection>
+    <developerConnection>scm:git:git@github.com:data-integrations/http.git</developerConnection>
+    <url>https://github.com/data-integrations/http.git</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <issueManagement>
+    <url>https://issues.cask.co/browse/CDAP</url>
+  </issueManagement>
 
   <repositories>
     <repository>
