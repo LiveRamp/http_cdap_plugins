@@ -59,17 +59,6 @@
     <url>https://issues.cask.co/browse/CDAP</url>
   </issueManagement>
 
-  <distributionManagement>
-    <repository>
-      <id>sonatype.release</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-    <site>
-      <id>cdap</id>
-      <url>http://cdap.io</url>
-    </site>
-  </distributionManagement>
-
   <repositories>
     <repository>
       <id>sonatype</id>
@@ -570,6 +559,28 @@
         </dependencies>
       </plugin>
       <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>3.5.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <_exportcontents>io.cdap.plugin.http.*</_exportcontents>
+            <Embed-Dependency>*;inline=false;scope=compile</Embed-Dependency>
+            <Embed-Transitive>true</Embed-Transitive>
+            <Embed-Directory>lib</Embed-Directory>
+          </instructions>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>bundle</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>com.liveramp.cdap.plugin</groupId>
         <version>1.1.4</version>
         <artifactId>cdap-maven-plugin</artifactId>
@@ -609,28 +620,6 @@
             </goals>
             <id>move-artifacts</id>
             <phase>package</phase>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <version>3.5.0</version>
-        <extensions>true</extensions>
-        <configuration>
-          <instructions>
-            <_exportcontents>io.cdap.plugin.http.*</_exportcontents>
-            <Embed-Dependency>*;inline=false;scope=compile</Embed-Dependency>
-            <Embed-Transitive>true</Embed-Transitive>
-            <Embed-Directory>lib</Embed-Directory>
-          </instructions>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>bundle</goal>
-            </goals>
           </execution>
         </executions>
       </plugin>
