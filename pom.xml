@@ -68,10 +68,6 @@
       <id>sonatype-snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
-    <repository>
-      <id>repository.spring.plugins-release</id>
-      <url>https://repo.spring.io/plugins-release/</url>
-    </repository>
   </repositories>
 
   <properties>
@@ -379,6 +375,10 @@
         <exclusion>
           <groupId>org.apache.kafka</groupId>
           <artifactId>kafka_2.10</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.pentaho</groupId>
+          <artifactId>pentaho-aggdesigner-algorithm</artifactId>
         </exclusion>
       </exclusions>
       <scope>test</scope>
