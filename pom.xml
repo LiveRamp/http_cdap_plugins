@@ -68,6 +68,10 @@
       <id>sonatype-snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </repository>
+    <repository>
+      <id>repository.spring.plugins-release</id>
+      <url>https://repo.spring.io/plugins-release/</url>
+    </repository>
   </repositories>
 
   <properties>
